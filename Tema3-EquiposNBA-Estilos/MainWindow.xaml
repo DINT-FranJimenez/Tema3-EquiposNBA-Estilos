@@ -1,0 +1,96 @@
+﻿<Window x:Class="Tema3_EquiposNBA_Estilos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3_EquiposNBA_Estilos"
+        mc:Ignorable="d"
+        Title="Equipos NBA" Height="450" Width="850">
+
+    <Window.Resources>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key = "imagenes_cajas">
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="CornerRadius" Value="3" />
+            <Setter Property="Margin" Value="15" />
+        </Style>
+
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="Width" Value="150" />
+        </Style>
+
+        <Style  TargetType ="{x:Type WrapPanel}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType ="{x:Type StackPanel}" x:Key = "lakers">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="MediumPurple" Offset="0.2"/>
+                        <GradientStop Color="Yellow" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType ="{x:Type StackPanel}" x:Key = "miami">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="Black" Offset="0.2"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+    <StackPanel HorizontalAlignment="Center">
+
+        <Border Style="{StaticResource imagenes_cajas}">
+            <StackPanel Style="{StaticResource lakers}">
+
+                <TextBlock Text="Los Angeles Lakers"/>
+
+                <WrapPanel>
+                    <Image Source="/3_lakers.png"/>
+                    <Image Source="/9_lakers.png"/>
+                    <Image Source="/14_lakers.png"/>
+                    <Image Source="/23_lakers.png"/>
+                    <Image Source="/39_lakers.png"/>
+                </WrapPanel>
+
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource imagenes_cajas}">
+            <StackPanel Style="{StaticResource miami}" >
+
+                <TextBlock 
+                            Text="Miami Heat" 
+                            Foreground="White"/>
+
+                <WrapPanel>
+                    <Image Source="/7_heat.png"/>
+                    <Image Source="/13_heat.png"/>
+                    <Image Source="/14_heat.png"/>
+                    <Image Source="/22_heat.png"/>
+                    <Image Source="/99_heat.png"/>
+                </WrapPanel>
+
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+
+</Window>
+
